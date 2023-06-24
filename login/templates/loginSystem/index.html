@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>Home Page</title>
+</head>
+
+<body style="text-align: center;">
+
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" roles="alert">
+        <strong>Message:</strong>{{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+    <h1 style="color: blue;">Hey....you</h1>
+    <h2 style="color:blue">Welcome to Website!!!</h2>
+
+    {% if user.is_authenticated %}
+    <h3>Hello {{ fname }}! </h3>
+    <h4>You're successfully logged in.</h4>
+    <button type="submit"><a href="/signout">SignOut</a></button>
+    {% else %}
+    <button type="submit"><a href="/signup"
+            style="color: rgb(250, 24, 24);"><strong>SignUp</strong></a></button><br /><br />
+    <button type="submit"><a href="/signin" style="color: red;"><strong>SignIn</strong></a></button>
+    {% endif %}
+
+
+</body>
+
+</html>

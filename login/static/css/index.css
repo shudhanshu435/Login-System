@@ -1,0 +1,33 @@
+.form-group{
+    display:flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.form-group label{
+    margin:5px 10px 5px 0;
+}
+
+.form-group input {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #0b0000;
+}
+
+
+.form-group button {
+    padding: 10px 20px;
+    background-color: rgb(11, 29, 227);
+    border: 1px solid #f11a1a;
+    color: white;
+}
+
+.form-group button:hover {
+    background-color: rgb(8, 68, 250);
+}
+
+body{
+    background-color: aqua;
+}
